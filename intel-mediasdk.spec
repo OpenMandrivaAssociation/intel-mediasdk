@@ -1,4 +1,6 @@
-%global optflags %{optflags} -fuse-ld=gold
+# Crap, this can't be compiled with lld or gold
+# https://github.com/Intel-Media-SDK/MediaSDK/issues/1844
+%global optflags %{optflags} -fuse-ld=bfd
 
 %define major              1
 %define mfxlibname         %mklibname mfx %{major}
