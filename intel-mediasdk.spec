@@ -9,13 +9,13 @@
 %define mfxhw64develname   %mklibname mfxhw64 -d
 
 Name:           intel-mediasdk
-Version:        21.1.3
-Release:        %mkrel 1
+Version:        21.3.5
+Release:        1
 Summary:        Hardware-accelerated video processing on Intel integrated GPUs Library
 Group:          System/Kernel and hardware
 License:        MIT
 URL:            https://github.com/Intel-Media-SDK/MediaSDK
-Source0:        %{url}/archive/%{name}-%{version}.tar.gz
+Source0:        https://github.com/Intel-Media-SDK/MediaSDK/archive/%{version}/MediaSDK-%{name}-%{version}.tar.gz
 
 BuildRequires:  cmake
 BuildRequires:  pkgconfig(gmock)
@@ -27,9 +27,6 @@ BuildRequires:  pkgconfig(ocl-icd)
 BuildRequires:  pkgconfig(wayland-client)
 BuildRequires:  pkgconfig(libva)
 
-# This package relies on igdgmm which relies on intel asm
-ExclusiveArch:  x86_64
-
 %description
 Intel Media SDK provides a plain C API to access hardware-accelerated video
 decode, encode and filtering on Intel Gen graphics hardware platforms.
@@ -39,8 +36,6 @@ Supported video encoders: HEVC, AVC, MPEG-2, JPEG, VP9 Supported video decoders:
 HEVC, AVC, VP8, VP9, MPEG-2, VC1, JPEG Supported video pre-processing filters:
 Color Conversion, Deinterlace, Denoise, Resize, Rotate, Composition
 
-
-##### mfx lib ###############################
 %package -n     %{mfxlibname}
 Summary:        Hardware-accelerated video processing on Intel integrated GPUs Library
 Group:          System/Libraries
@@ -70,7 +65,7 @@ applications which will use mfx library.
 %{_libdir}/pkgconfig/libmfx.pc
 %{_libdir}/pkgconfig/mfx.pc
 
-##### mfxtracer lib ###############################
+
 %package -n     %{mfxtracerlibname}
 Summary:        Tracer for hardware-accelerated video processing on Intel integrated GPUs Library
 Group:          System/Libraries
@@ -96,7 +91,7 @@ applications which will use mfx library.
 %files -n %{mfxtracerdevelname}
 %{_libdir}/libmfx-tracer.so
 
-##### mfxhw64 lib ###############################
+
 %package -n     %{mfxhw64libname}
 Summary:        Hardware-accelerated video processing on Intel integrated GPUs Library
 Group:          System/Libraries
@@ -126,7 +121,6 @@ applications which will use mfxhw64 library.
 %{_libdir}/pkgconfig/libmfxhw64.pc
 
 
-##### build  ###############################
 %prep
 %autosetup -p1 -n MediaSDK-intel-mediasdk-%{version}
 
@@ -140,10 +134,10 @@ applications which will use mfxhw64 library.
     -DENABLE_WAYLAND=ON \
     -DENABLE_X11=ON \
     -DENABLE_X11_DRI3=ON \
-    -DUSE_SYSTEM_GTEST=ON \
+    -DUSE_SYSTEM_GTEST=ON
 
-%cmake_build
+%make_build
 
 %install
-%cmake_install
+%make_install -C build
 find %{buildroot} -name '*.la' -delete
