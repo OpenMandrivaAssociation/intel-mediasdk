@@ -129,8 +129,12 @@ applications which will use mfxhw64 library.
 %autosetup -p1 -n MediaSDK-intel-mediasdk-%{version}
 
 %build
+# Compilation with Clang 13 failed.
+# "/builddir/build/BUILD/MediaSDK-intel-mediasdk-21.3.5/tests/unit/suites/mfx_dispatch/linux/mfx_dispatch_test_main.cpp:48:12: 
+# error: redefinition of a 'extern inline' function 'fgets' is not supported in C++"
 export CC=gcc
 export CXX=g++
+
 %cmake \
     -DBUILD_DISPATCHER=ON \
     -DBUILD_SAMPLES=OFF \
@@ -140,7 +144,8 @@ export CXX=g++
     -DENABLE_WAYLAND=ON \
     -DENABLE_X11=ON \
     -DENABLE_X11_DRI3=ON \
-    -DUSE_SYSTEM_GTEST=ON
+    -DUSE_SYSTEM_GTEST=ON \
+    -DCMAKE_BUILD_TYPE=Release
 
 %make_build
 
