@@ -129,6 +129,8 @@ applications which will use mfxhw64 library.
 %autosetup -p1 -n MediaSDK-intel-mediasdk-%{version}
 
 %build
+export CC=gcc
+export CXX=g++
 %cmake \
     -DBUILD_DISPATCHER=ON \
     -DBUILD_SAMPLES=OFF \
