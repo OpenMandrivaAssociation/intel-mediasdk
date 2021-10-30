@@ -1,3 +1,5 @@
+%global optflags %{optflags} -fuse-ld=gold
+
 %define major              1
 %define mfxlibname         %mklibname mfx %{major}
 %define mfxdevelname       %mklibname mfx -d
