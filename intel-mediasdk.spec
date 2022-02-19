@@ -19,7 +19,7 @@ Summary:        Hardware-accelerated video processing on Intel integrated GPUs L
 Group:          System/Kernel and hardware
 License:        MIT
 URL:            https://github.com/Intel-Media-SDK/MediaSDK
-Source0:        https://github.com/Intel-Media-SDK/MediaSDK/archive/%{version}/MediaSDK-%{name}-%{version}.tar.gz
+Source0:        https://github.com/Intel-Media-SDK/MediaSDK/archive/%{version}/media-driver-intel-media-%{version}.tar.gz
 
 BuildRequires:  cmake
 BuildRequires:  pkgconfig(gmock)
@@ -126,7 +126,7 @@ applications which will use mfxhw64 library.
 
 
 %prep
-%autosetup -p1 -n MediaSDK-intel-mediasdk-%{version}
+%autosetup -p1 -n media-driver-intel-media-%{version}
 
 %build
 # Compilation with Clang 13 failed.
