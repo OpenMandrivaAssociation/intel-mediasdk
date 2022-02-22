@@ -60,7 +60,7 @@ This package contains the headers that programmers will need to develop
 applications which will use mfx library.
 
 %files -n %{mfxlibname}
-%{_libdir}/libmfx.so.%{major}{,.*}
+#{_libdir}/libmfx.so.%{major}{,.*}
 
 %files -n %{mfxdevelname}
 %dir %{_includedir}/mfx
