@@ -126,7 +126,7 @@ applications which will use mfxhw64 library.
 
 
 %prep
-%autosetup -p1 -n media-driver-intel-media-%{version}
+%autosetup -p1 -c
 
 %build
 # Compilation with Clang 13 failed.
