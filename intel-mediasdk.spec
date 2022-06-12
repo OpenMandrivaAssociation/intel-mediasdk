@@ -13,7 +13,7 @@
 %define mfxhw64develname   %mklibname mfxhw64 -d
 
 Name:           intel-mediasdk
-Version:        22.2.1
+Version:        22.4.3
 Release:        1
 Summary:        Hardware-accelerated video processing on Intel integrated GPUs Library
 Group:          System/Kernel and hardware
@@ -126,7 +126,7 @@ applications which will use mfxhw64 library.
 
 
 %prep
-%autosetup -p1 -n media-driver-intel-media-%{version}
+%autosetup -p1 -n MediaSDK-intel-mediasdk-%{version}
 
 %build
 # Compilation with Clang 13 failed.
