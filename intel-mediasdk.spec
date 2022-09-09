@@ -13,13 +13,13 @@
 %define mfxhw64develname   %mklibname mfxhw64 -d
 
 Name:           intel-mediasdk
-Version:        22.4.3
+Version:        22.5.3
 Release:        1
 Summary:        Hardware-accelerated video processing on Intel integrated GPUs Library
 Group:          System/Kernel and hardware
 License:        MIT
 URL:            https://github.com/Intel-Media-SDK/MediaSDK
-Source0:        https://github.com/Intel-Media-SDK/MediaSDK/archive/%{version}/media-driver-intel-media-%{version}.tar.gz
+Source0:        https://github.com/Intel-Media-SDK/MediaSDK/archive/%{version}/MediaSDK-intel-mediasdk-%{version}.tar.gz
 
 BuildRequires:  cmake
 BuildRequires:  pkgconfig(gmock)
@@ -29,6 +29,7 @@ BuildRequires:  pkgconfig(pciaccess)
 BuildRequires:  pkgconfig(x11)
 BuildRequires:  pkgconfig(ocl-icd)
 BuildRequires:  pkgconfig(wayland-client)
+BuildRequires:  pkgconfig(wayland-protocols)
 BuildRequires:  pkgconfig(libva)
 
 %description
