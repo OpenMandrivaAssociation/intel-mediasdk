@@ -29,6 +29,7 @@ BuildRequires:  pkgconfig(pciaccess)
 BuildRequires:  pkgconfig(x11)
 BuildRequires:  pkgconfig(ocl-icd)
 BuildRequires:  pkgconfig(wayland-client)
+BuildRequires:  pkgconfig(wayland-protocols)
 BuildRequires:  pkgconfig(libva)
 
 %description
@@ -132,8 +133,8 @@ applications which will use mfxhw64 library.
 # Compilation with Clang 13 failed.
 # "/builddir/build/BUILD/MediaSDK-intel-mediasdk-21.3.5/tests/unit/suites/mfx_dispatch/linux/mfx_dispatch_test_main.cpp:48:12: 
 # error: redefinition of a 'extern inline' function 'fgets' is not supported in C++"
-#export CC=gcc
-#export CXX=g++
+export CC=gcc
+export CXX=g++
 
 %cmake \
     -DBUILD_DISPATCHER=ON \
