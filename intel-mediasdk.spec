@@ -13,8 +13,8 @@
 %define mfxhw64develname   %mklibname mfxhw64 -d
 
 Name:           intel-mediasdk
-Version:        22.6.0
-Release:        2
+Version:        23.2.2
+Release:        1
 Summary:        Hardware-accelerated video processing on Intel integrated GPUs Library
 Group:          System/Kernel and hardware
 License:        MIT
