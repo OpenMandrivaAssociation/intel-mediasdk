@@ -20,7 +20,7 @@ Group:          System/Kernel and hardware
 License:        MIT
 URL:            https://github.com/Intel-Media-SDK/MediaSDK
 Source0:        https://github.com/Intel-Media-SDK/MediaSDK/archive/%{version}/MediaSDK-intel-mediasdk-%{version}.tar.gz
-BuildRequires:  https://patch-diff.githubusercontent.com/raw/Intel-Media-SDK/MediaSDK/pull/3005.patch
+Patch0:  https://patch-diff.githubusercontent.com/raw/Intel-Media-SDK/MediaSDK/pull/3005.patch
 
 BuildRequires:  cmake
 BuildRequires:  pkgconfig(gmock)
